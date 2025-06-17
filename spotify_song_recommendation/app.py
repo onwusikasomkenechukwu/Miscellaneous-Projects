@@ -4,6 +4,12 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics.pairwise import cosine_similarity
 
+import os
+
+if not os.path.exists("top_10000_1950-now.csv"):
+    st.error("Dataset not found. Please upload or check the file path.")
+    st.stop()
+
 # Load the data
 df = pd.read_csv("top_10000_1950-now.csv")
 df = df.dropna(subset=['Track Name', 'Artist Name(s)', 'Track Duration (ms)',
