@@ -1,0 +1,7 @@
+#Requirements for the app to work
+
+streamlit
+pandas
+scikit-learn
+numpy
+Pillow
