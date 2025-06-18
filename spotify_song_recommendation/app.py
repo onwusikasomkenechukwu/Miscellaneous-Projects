@@ -11,13 +11,13 @@ st.write("Current working directory:", os.getcwd())
 st.write("Files in current directory:", os.listdir())
 
 
-if not os.path.exists("spotify.csv"):
+if not os.path.exists("https://raw.githubusercontent.com/onwusikasomkenechukwu/Miscellaneous-Projects/main/spotify_song_recommendation/spotify.csv"):
     st.error("Dataset not found. Please upload or check the file path.")
     st.stop()
 
 
 # Load the data
-df = pd.read_csv("spotify.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/onwusikasomkenechukwu/Miscellaneous-Projects/main/spotify_song_recommendation/spotify.csv")
 df = df.dropna(subset=['Track Name', 'Artist Name(s)', 'Track Duration (ms)',
                        'Danceability', 'Energy', 'Tempo', 'Album Image URL', 'Track URI'])
 
