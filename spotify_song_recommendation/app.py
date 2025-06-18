@@ -11,14 +11,16 @@ st.write("Current working directory:", os.getcwd())
 st.write("Files in current directory:", os.listdir())
 
 
-if not os.path.exists("top_10000_1950-now.csv"):
-    st.error("Dataset not found. Please upload or check the file path.")
-    st.stop()
-
 # Load the data
 df = pd.read_csv("top_10000_1950-now.csv")
 df = df.dropna(subset=['Track Name', 'Artist Name(s)', 'Track Duration (ms)',
                        'Danceability', 'Energy', 'Tempo', 'Album Image URL', 'Track URI'])
+
+
+if not os.path.exists("top_10000_1950-now.csv"):
+    st.error("Dataset not found. Please upload or check the file path.")
+    st.stop()
+
 
 # Clean column for easier matching
 df['Track Name Lower'] = df['Track Name'].str.lower()
