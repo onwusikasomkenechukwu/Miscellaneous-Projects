@@ -17,7 +17,7 @@ if not os.path.exists("spotify.csv"):
 
 
 # Load the data
-df = pd.read_csv("top_10000_1950-now.csv")
+df = pd.read_csv("spotify.csv")
 df = df.dropna(subset=['Track Name', 'Artist Name(s)', 'Track Duration (ms)',
                        'Danceability', 'Energy', 'Tempo', 'Album Image URL', 'Track URI'])
 
