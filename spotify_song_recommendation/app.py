@@ -11,7 +11,7 @@ st.write("Current working directory:", os.getcwd())
 st.write("Files in current directory:", os.listdir())
 
 
-if not os.path.exists("top_10000_1950-now.csv"):
+if not os.path.exists("spotify.csv"):
     st.error("Dataset not found. Please upload or check the file path.")
     st.stop()
 
